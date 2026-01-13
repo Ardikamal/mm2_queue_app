@@ -9,7 +9,7 @@ Aplikasi menerima input berupa waktu antar kedatangan pelanggan dan waktu pelaya
 
 ## 👤 Identitas Pembuat
 * **Nama:** Ardi Kamal Karima
-* **NIM:** 31230023
+* **NIM:** 301230023
 * **Kelas:** 5C
 * **Program Studi:** S1 Teknik Informatika
 * **Fakultas:** Teknologi Informasi
