@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hasil Perhitungan M/M/2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Hasil Perhitungan M/M/2</h1>
+
+    <h3>Input</h3>
+    <ul>
+        <li>Waktu antar kedatangan = {{ arrival_time }} menit</li>
+        <li>Waktu pelayanan per pelayan = {{ service_time }} menit</li>
+    </ul>
+
+    <h3>Langkah Perhitungan</h3>
+    <p><b>1. Laju Kedatangan (λ)</b></p>
+    <p>λ = 1 / waktu antar kedatangan = 1 / {{ arrival_time }} = {{ "%.4f"|format(lam) }}</p>
+
+    <p><b>2. Laju Pelayanan (μ)</b></p>
+    <p>μ = 1 / waktu pelayanan = 1 / {{ service_time }} = {{ "%.4f"|format(mu) }}</p>
+
+    <p><b>3. Pemanfaatan Pelayan (ρ)</b></p>
+    <p>ρ = λ / (2μ) = {{ "%.4f"|format(lam) }} / (2 × {{ "%.4f"|format(mu) }}) = {{ "%.4f"|format(rho) }}</p>
+
+    <p><b>4. Waktu Rata-rata dalam Sistem (W)</b></p>
+    <p>W = 1 / (μ − λ/2) = {{ "%.4f"|format(W) }} menit</p>
+
+    <p><b>5. Waktu Rata-rata dalam Antrian (Wq)</b></p>
+    <p>Wq = λ² / [2μ(μ − λ/2)] = {{ "%.4f"|format(Wq) }} menit</p>
+
+    <h3>Kesimpulan</h3>
+    <ul>
+        <li>Rata-rata pelanggan berada dalam sistem selama <b>{{ "%.2f"|format(W) }} menit</b></li>
+        <li>Rata-rata waktu menunggu di antrian adalah <b>{{ "%.2f"|format(Wq) }} menit</b></li>
+    </ul>
+
+    <a href="/">⬅ Hitung Ulang</a>
+</div>
+
+</body>
+</html>

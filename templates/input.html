@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Queueing Theory Calculator - M/M/2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Queueing Theory Calculator</h1>
+    <p class="subtitle">Model Antrian Pelayan Ganda (M/M/2)</p>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="error">{{ messages[0] }}</div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <label>Waktu Antar Kedatangan (menit)</label>
+        <input type="number" step="any" name="arrival_time" placeholder="Contoh: 4" required>
+
+        <label>Waktu Pelayanan per Pelayan (menit)</label>
+        <input type="number" step="any" name="service_time" placeholder="Contoh: 3" required>
+
+        <button type="submit">Hitung Antrian</button>
+    </form>
+
+    <div class="info">
+        <b>Contoh Soal:</b><br>
+        Waktu antar kedatangan = 4 menit<br>
+        Waktu pelayanan = 3 menit
+    </div>
+</div>
+
+</body>
+</html>
